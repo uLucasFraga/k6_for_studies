@@ -4,9 +4,9 @@ export default class Utils {
       case "DEV":
         return "https://serverest.dev";
       case "LOCAL":
-        return "http://localhost:3200";
+        return "http://localhost:3000";
       default:
-        return "http://localhost:3200";
+        return "http://serverest:3000";
     }
   }
 }
