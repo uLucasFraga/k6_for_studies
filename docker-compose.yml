@@ -5,10 +5,10 @@ networks:
   grafana:
 
 services:
-  serverest:
-    image: paulogoncalvesbh/serverest:latest
-    ports:
-      - "3200:3200"
+  # serverest:
+  #   image: paulogoncalvesbh/serverest:latest
+  #   ports:
+  #     - "3200:3200"
 
   influxdb:
     image: influxdb:1.8
