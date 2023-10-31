@@ -49,7 +49,7 @@ Utilizar o **Scoop** ou **Chocolatey** para baixar os packages sinalizados acima
 > Yarn:
 
 ```bash
-scoop install yarn
+choco install yarn
 ```
 
 > K6:
@@ -82,8 +82,8 @@ yarn install
 
 É necessário a escolha do ambiente através `process.ENV`.
 
-Por exemplo: `env=DEV yarn loadTest` para **DEV** ou `env=QA yarn loadTest` para **QA**.
-Se não for inputado nenhum valor, o default é **DEV**.
+Por exemplo: `env=DEV yarn loadTest` para **DEV** ou `env=LOCAL yarn loadTest` para **LOCAL**.
+Se não for inputado nenhum valor, o default é **LOCAL**.
 
 -----------------------
 
