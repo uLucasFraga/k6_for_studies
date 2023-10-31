@@ -42,7 +42,7 @@ Utilizado:
 
 > Tips:
 
-Utilizar o **Scoop** ou Chocolatey para baixar os packages sinalizados acima.
+Utilizar o **Scoop** ou **Chocolatey** para baixar os packages sinalizados acima.
 
 #### Exemplos
 
@@ -55,13 +55,13 @@ scoop install yarn
 > K6:
 
 ```bash
-scoop install k6
+choco install k6
 ```
 
 > Docker:
 
 ```bash
-scoop install docker
+choco install docker
 ```
 
 > Clonar o projeto:

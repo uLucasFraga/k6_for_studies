@@ -20,16 +20,15 @@
   "license": "MIT",
   "homepage": "https://github.com/uLucasFraga/k6_for_studies.git/README.md",
   "devDependencies": {
-    "webpack-cli": "^5.0.1"
+    "webpack-cli": "5.0.1",
+    "@babel/core": "7.20.12",
+    "@babel/preset-env": "7.20.2",
+    "babel-loader": "9.1.2"
   },
   "dependencies": {
-    "@babel/core": "^7.20.12",
-    "@babel/preset-env": "^7.20.2",
-    "babel-loader": "^9.1.2",
-    "casual": "^1.6.2",
-    "core-js": "^3.27.1",
-    "@faker-js/faker": "^7.6.0",
-    "k6": "^0.42.0",
-    "webpack": "^5.75.0"
+    "casual": "1.6.2",
+    "core-js": "3.27.1",
+    "@faker-js/faker": "7.6.0",
+    "webpack": "5.75.0"
   }
 }

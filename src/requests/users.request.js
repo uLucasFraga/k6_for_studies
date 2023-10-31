@@ -13,10 +13,7 @@ export default class Users {
   }
 
   getUsers() {
-    let response = http.get(
-      `${utils.getBaseUrl()}/usuarios`,
-      this.params
-    );
+    let response = http.get(`${utils.getBaseUrl()}/usuarios`, this.params);
     check(response, {
       "is status 200": () => response.status === 200,
     });

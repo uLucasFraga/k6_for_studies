@@ -3,12 +3,10 @@ export default class Utils {
     switch (process.env.NODE_ENV) {
       case "DEV":
         return "https://serverest.dev";
-        break;
       case "LOCAL":
-          return "http://localhost:8080";
-        break;
+        return "http://localhost:3000";
       default:
-        return "http://localhost:8080";
+        return "http://localhost:3000";
     }
   }
 }
