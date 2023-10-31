@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rm -rf node_modules down",
     "docker:startServer": "docker run -d -p 3200:3000 --name serverest paulogoncalvesbh/serverest:latest",
-    "docker:loadTest": "docker-compose up -d influxdb grafana && webpack && docker-compose run k6 run /dist/fullFlowLoad.test.js",
+    "docker:loadTest": "docker-compose up -d influxdb grafana && webpack && docker-compose run k6 run /dist/fullFlowLoad.test.js --insecure-skip-tls-verify",
     "docker:stressTest": "docker-compose up -d influxdb grafana && webpack && docker-compose run k6 run /dist/fullFlowStress.test.js",
     "docker:up": "docker-compose up -d influxdb grafana",
     "docker:down": "docker-compose down -v",

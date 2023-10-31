@@ -106,25 +106,28 @@ A estrutura do repositório segue a arquitetura abaixo:
 📦k6-for-studies  
 ┣ 📂dashboards  
 ┃ ┗ 📜k6-load-testing-results.json  
-┣ 📂img  
-┃ ┗ 📜img.png  
+┣ 📂docs  
+┃ ┗ 📂img  
+┃ ┃ ┗ 📜img.png  
 ┣ 📂src  
 ┃ ┣ 📂requests  
-┃ ┃ ┣ 📜users.request.js  
+┃ ┃ ┗ 📜users.request.js  
 ┃ ┣ 📂simulations  
-┃ ┃ ┣ 📜fullFlowLoad.test.js  
+┃ ┃ ┗ 📜fullFlowLoad.test.js  
 ┃ ┃ ┗ 📜fullFlowStress.test.js  
-┃ ┗ 📂utils  
-┃ ┃ ┗ 📜utils.js
-┣ 📜.babelrc    
+┃ ┣ 📂utils  
+┃ ┃  ┗ 📜utils.js  
+┣ 📜.babelrc  
+┣ 📜.dockerignore  
 ┣ 📜.gitignore  
 ┣ 📜docker-compose.yml  
 ┣ 📜grafana-dashboard.yaml  
-┣ 📜grafana-datasource.yaml 
-┗ 📜package.json  
+┣ 📜grafana-datasource.yaml  
+┣ 📜LICENSE  
+┣ 📜package.json  
 ┣ 📜README.md  
-┣ 📜webpack.config.js 
-┣ 📜yarn-lock.json  
+┣ 📜webpack.config.js  
+┣ 📜yarn-lock
 
 -----------------------
 
@@ -145,7 +148,7 @@ yarn loadTest
 > Para rodar os testes de Load sem o yarn:
 
 ```js
-k6 run -e env=DEV src/simulations/fullFlowLoad.test.js
+k6 run -e env=LOCAL src/simulations/fullFlowLoad.test.js
 ```
 
 > Para rodar os testes de Stress com o yarn:
@@ -157,7 +160,7 @@ yarn stressTest
 > Para rodar os testes de Stress sem o yarn:
 
 ```js
-k6 run -e env=DEV src/simulations/fullFlowStress.test.js
+k6 run -e env=LOCAL src/simulations/fullFlowStress.test.js
 ```
 
 #### Docker
@@ -173,7 +176,7 @@ yarn docker:down
 > Para rodar os testes de Stress sem o yarn:
 
 ```js
-docker-compose up -d influxdb grafana && docker-compose run k6 run -e env=DEV /src/simulations/fullFlowStress.test.js --insecure-skip-tls-verify
+docker-compose up -d influxdb grafana && docker-compose run k6 run -e env=LOCAL ./src/simulations/fullFlowStress.test.js
 ```
 
 ### Como visualizar o Report
