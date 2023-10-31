@@ -6,7 +6,7 @@ export default class Utils {
       case "LOCAL":
         return "http://localhost:3200";
       default:
-        return "http://localhost:3200";
+        return "http://serverest:3000";
     }
   }
 }
