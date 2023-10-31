@@ -142,7 +142,7 @@ Após confirmar as configurações anteriores, seguir os passos abaixo:
 > Para rodar os testes de Load com o yarn:
 
 ```js
-yarn loadTest
+yarn local:loadTest
 ```
 
 > Para rodar os testes de Load sem o yarn:
@@ -154,7 +154,7 @@ k6 run -e env=LOCAL src/simulations/fullFlowLoad.test.js
 > Para rodar os testes de Stress com o yarn:
 
 ```js
-yarn stressTest
+yarn local:stressTest
 ```
 
 > Para rodar os testes de Stress sem o yarn:
@@ -176,12 +176,12 @@ yarn docker:down
 > Para rodar os testes de Stress sem o yarn:
 
 ```js
-docker-compose up -d influxdb grafana && docker-compose run k6 run -e env=LOCAL ./src/simulations/fullFlowStress.test.js
+docker-compose up -d influxdb grafana serverest && docker-compose run k6 run -e env=LOCAL src/simulations/fullFlowStress.test.js
 ```
 
 ### Como visualizar o Report
 
-*IMPORTANTE*: Os testes via *docker* será gerado um dashboard no grafana: [Dashboard do Grafana](http://localhost:3200/d/k6/k6-load-testing-results?orgId=1&refresh=5s)
+*IMPORTANTE*: Os testes via *docker* será gerado um dashboard no grafana: [Dashboard do Grafana](http://localhost:3000/d/k6/k6-load-testing-results?orgId=1&refresh=5s)
 
 Exemplo de dados gerados no Grafana: ![DASHBOARD](./docs/img/img.png)
 

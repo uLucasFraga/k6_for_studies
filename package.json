@@ -6,14 +6,14 @@
   "scripts": {
     "clean": "rm -rf node_modules down",
     "docker:startServer": "docker run -d -p 3200:3000 --name serverest paulogoncalvesbh/serverest:latest",
-    "docker:loadTest": "webpack && docker-compose run k6 run /dist/fullFlowLoad.test.js --insecure-skip-tls-verify",
+    "docker:loadTest": "webpack && docker-compose run k6 run /dist/fullFlowLoad.test.js",
     "docker:stressTest": "webpack && docker-compose run k6 run /dist/fullFlowStress.test.js",
     "docker:up": "docker-compose up -d serverest influxdb grafana",
     "docker:down": "docker-compose down -v",
-    "startServer": "npx serverest@latest -p 3200 -y",
-    "loadTest": "webpack && k6 run dist/fullFlowLoad.test.js",
-    "stressTest": "webpack && k6 run dist/fullFlowStress.test.js",
-    "loadTest:ci:wait": "wait-on -i 1000 -t 30000 -l http://localhost:3200"
+    "local:startServer": "npx serverest@latest -p 3200 -y",
+    "local:loadTest": "webpack && k6 run dist/fullFlowLoad.test.js",
+    "local:stressTest": "webpack && k6 run dist/fullFlowStress.test.js",
+    "serverWait:ci": "wait-on -i 1000 -t 30000 -l http://localhost:3000"
   },
   "repository": {
     "type": "git",
@@ -23,15 +23,15 @@
   "license": "MIT",
   "homepage": "https://github.com/uLucasFraga/k6_for_studies.git/README.md",
   "devDependencies": {
-    "webpack-cli": "5.0.1",
-    "@babel/core": "7.20.12",
-    "@babel/preset-env": "7.20.2",
-    "babel-loader": "9.1.2"
+    "@babel/core": "7.23.2",
+    "@babel/preset-env": "7.23.2",
+    "@faker-js/faker": "8.2.0",
+    "babel-loader": "9.1.3",
+    "core-js": "3.33.2",
+    "wait-on": "7.0.1",
+    "webpack-cli": "5.1.4"
   },
   "dependencies": {
-    "casual": "1.6.2",
-    "core-js": "3.27.1",
-    "@faker-js/faker": "7.6.0",
-    "webpack": "5.75.0"
+    "webpack": "5.89.0"
   }
 }
