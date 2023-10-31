@@ -5,10 +5,13 @@ networks:
   grafana:
 
 services:
+  serverest:
+    image: paulogoncalvesbh/serverest:latest
+    ports:
+      - "3200:3200"
+
   influxdb:
     image: influxdb:1.8
-    #    entrypoint: /bin/sh
-    #    user: root
     networks:
       - k6
       - grafana
@@ -19,8 +22,6 @@ services:
 
   grafana:
     image: grafana/grafana:latest
-    #    entrypoint: /bin/sh
-    #    user: root
     networks:
       - grafana
     ports:
@@ -35,8 +36,7 @@ services:
       - ./grafana-datasource.yaml:/etc/grafana/provisioning/datasources/datasource.yaml
 
   k6:
-    image: loadimpact/k6:latest
-    #    entrypoint: /bin/sh
+    image: grafana/k6:latest
     user: root
     networks:
       - k6

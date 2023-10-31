@@ -1,0 +1,28 @@
+name: K6 Tests
+on: push
+
+jobs:
+  start_server:
+    name: Initialize server
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup
+        uses: ./.github/actions/setup
+      - name: Start ServeRest container
+        run:  "docker run -d -p 3200:3000 --name serverest paulogoncalvesbh/serverest:latest",
+
+  performance_load_tests:
+    name: Run Load Tests
+    needs: start_server
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Run K6 Tests
+        uses: grafana/k6-action@v0.3.0
+        with:
+          filename: fullFlowLoad.test.js
+          flags: --vus 05 --duration 30s
+        env:
+          BASE_URL: "http://localhost:3200"

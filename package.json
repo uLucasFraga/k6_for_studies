@@ -4,7 +4,7 @@
   "description": "Repository for examples by Performance Testing using K6",
   "main": "index.js",
   "scripts": {
-    "clean": "rm -rf node_modules yarn.lock down",
+    "clean": "rm -rf node_modules down",
     "docker:startServer": "docker run -d -p 3200:3000 --name serverest paulogoncalvesbh/serverest:latest",
     "docker:loadTest": "docker-compose up -d influxdb grafana && webpack && docker-compose run k6 run /dist/fullFlowLoad.test.js",
     "docker:stressTest": "docker-compose up -d influxdb grafana && webpack && docker-compose run k6 run /dist/fullFlowStress.test.js",
