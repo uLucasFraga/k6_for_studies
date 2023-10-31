@@ -181,7 +181,7 @@ docker-compose up -d influxdb grafana && docker-compose run k6 run -e env=LOCAL 
 
 ### Como visualizar o Report
 
-*IMPORTANTE*: Os testes via *docker* será gerado um dashboard no grafana: [Dashboard do Grafana](http://localhost:3000/d/k6/k6-load-testing-results?orgId=1&refresh=5s)
+*IMPORTANTE*: Os testes via *docker* será gerado um dashboard no grafana: [Dashboard do Grafana](http://localhost:3200/d/k6/k6-load-testing-results?orgId=1&refresh=5s)
 
 Exemplo de dados gerados no Grafana: ![DASHBOARD](./docs/img/img.png)
 
