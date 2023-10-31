@@ -13,7 +13,7 @@
     "local:startServer": "npx serverest@latest -p 3200 -y",
     "local:loadTest": "webpack && k6 run dist/fullFlowLoad.test.js",
     "local:stressTest": "webpack && k6 run dist/fullFlowStress.test.js",
-    "serverWait:ci": "wait-on -i 1000 -t 30000 -l http://localhost:3000"
+    "serverWait:ci": "wait-on -i 10000 -t 30000 -l http://localhost:3000"
   },
   "repository": {
     "type": "git",

@@ -11,8 +11,8 @@ jobs:
       - name: Setup
         uses: ./.github/actions/setup
 
-      - name: Start ServeRest container
-        run: yarn docker:startServer
+      - name: Start Containers
+        run: yarn docker:up
 
       - name: Wait for Container
         run: yarn serverWait:ci
