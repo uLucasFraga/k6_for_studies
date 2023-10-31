@@ -1,0 +1,35 @@
+{
+  "name": "k6-for-studies",
+  "version": "0.0.1",
+  "description": "Repository for examples by Performance Testing using K6",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf node_modules yarn.lock",
+    "loadTest": "webpack && k6 run dist/fullFlowLoad.test.js",
+    "stressTest": "webpack && k6 run dist/fullFlowStress.test.js",
+    "docker:loadTest": "docker-compose up -d influxdb grafana && webpack && docker-compose run k6 run /dist/fullFlowLoad.test.js --insecure-skip-tls-verify",
+    "docker:stressTest": "docker-compose up -d influxdb grafana && webpack && docker-compose run k6 run /dist/fullFlowStress.test.js --insecure-skip-tls-verify",
+    "docker:up": "docker-compose up -d influxdb grafana",
+    "docker:down": "docker-compose down -v"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uLucasFraga/k6_for_studies"
+  },
+  "author": "Lucas Fraga <ulucasfraga@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/uLucasFraga/k6_for_studies.git/README.md",
+  "devDependencies": {
+    "webpack-cli": "^5.0.1"
+  },
+  "dependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "babel-loader": "^9.1.2",
+    "casual": "^1.6.2",
+    "core-js": "^3.27.1",
+    "@faker-js/faker": "^7.6.0",
+    "k6": "^0.42.0",
+    "webpack": "^5.75.0"
+  }
+}
