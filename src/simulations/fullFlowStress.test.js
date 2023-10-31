@@ -1,4 +1,4 @@
-import Users from "../requests/users.request";
+import Users from "../requests/users.request.js";
 
 import { group } from "k6";
 
